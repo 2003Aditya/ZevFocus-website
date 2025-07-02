@@ -3,7 +3,7 @@ async function verifyHash() {
     if (!hash) return alert("Please enter a hash ID.");
 
     try {
-        const res = await fetch(`https://zev-backend.vercel.app/api/verify`, {
+        const res = await fetch(`https://zev-focus-backend.vercel.app/api/verify`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
