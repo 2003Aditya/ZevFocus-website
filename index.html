@@ -1,241 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>ZevFocus – Hack your time, not just your code</title>
-        <style>
-        :root {
-            --bg: #0f1117;
-            --fg: #e6e9f0;
-            --accent: #f97316; /* orange-500 */
-            --accent-light: #fbbf24;
-            --card: #1c1f26;
-            --input-bg: #22252d;
-            --input-border: #333843;
-            --mono: "JetBrains Mono", Menlo, Consolas, monospace;
-        }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZevFocus – Hack your time, not just your code</title>
+    <style>
+      :root {
+        --bg: #0f1117;
+        --fg: #e6e9f0;
+        --accent: #f97316;
+        --accent-light: #fbbf24;
+        --card: #1c1f26;
+        --input-bg: #22252d;
+        --input-border: #333843;
+        --mono: "JetBrains Mono", Menlo, Consolas, monospace;
+      }
 
-        * {
-            box-sizing: border-box;
-        }
+      * {
+        box-sizing: border-box;
+      }
 
-        body {
-            margin: 0;
-            font-family: var(--mono);
-            background: var(--bg);
-            color: var(--fg);
-            line-height: 1.7;
-        }
+      body {
+        margin: 0;
+        font-family: var(--mono);
+        background: var(--bg);
+        color: var(--fg);
+        line-height: 1.7;
+      }
 
-        header {
-            padding: 3rem 1rem 2rem;
-            text-align: center;
-        }
+      header {
+        padding: 3rem 1rem 2rem;
+        text-align: center;
+      }
 
-        h1 {
-            font-size: 2.75rem;
-            margin: 0 0 0.5rem;
-            color: var(--accent);
-            letter-spacing: -0.5px;
-        }
+      h1 {
+        font-size: 2.75rem;
+        margin: 0 0 0.5rem;
+        color: var(--accent);
+        letter-spacing: -0.5px;
+      }
 
-        h2 {
-            color: var(--accent-light);
-            margin: 3rem 0 1rem;
-            text-align: center;
-            font-size: 1.75rem;
-        }
+      h2 {
+        color: var(--accent-light);
+        margin: 3rem 0 1rem;
+        text-align: center;
+        font-size: 1.75rem;
+      }
 
-        p {
-            max-width: 740px;
-            margin: 0.4rem auto 1.25rem;
-            text-align: center;
-        }
+      p {
+        max-width: 740px;
+        margin: 0.4rem auto 1.25rem;
+        text-align: center;
+      }
 
-        .btn-group {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
+      .btn-group {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 2rem;
+      }
 
-        .btn {
-            background: var(--accent);
-            color: #fff;
-            padding: 0.75rem 1.4rem;
-            border: none;
-            border-radius: 10px;
-            font-size: 0.95rem;
-            text-decoration: none;
-            transition: background 0.2s ease, transform 0.15s ease;
-        }
+      .btn {
+        background: var(--accent);
+        color: #fff;
+        padding: 0.75rem 1.4rem;
+        border: none;
+        border-radius: 10px;
+        font-size: 0.95rem;
+        text-decoration: none;
+        transition: background 0.2s ease, transform 0.15s ease;
+      }
 
-        .btn:hover {
-            background: #fb923c;
-            transform: translateY(-2px);
-        }
+      .btn:hover {
+        background: #fb923c;
+        transform: translateY(-2px);
+      }
 
-        section {
-            padding: 2rem 1rem;
-            max-width: 960px;
-            margin: 0 auto;
-        }
+      section {
+        padding: 2rem 1rem;
+        max-width: 960px;
+        margin: 0 auto;
+      }
 
-        ul.features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            list-style: none;
-            padding: 0;
-        }
+      ul.features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        list-style: none;
+        padding: 0;
+      }
 
-        ul.features li {
-            background: var(--card);
-            padding: 1.25rem;
-            border-radius: 12px;
-            border: 1px solid #292c35;
-        }
+      ul.features li {
+        background: var(--card);
+        padding: 1.25rem;
+        border-radius: 12px;
+        border: 1px solid #292c35;
+      }
 
-        code {
-            background: #2b2f3a;
-            padding: 0.25rem 0.5rem;
-            border-radius: 5px;
-            font-size: 0.9rem;
-        }
+      code {
+        background: #2b2f3a;
+        padding: 0.25rem 0.5rem;
+        border-radius: 5px;
+        font-size: 0.9rem;
+      }
 
-        pre {
-            background: var(--card);
-            border-radius: 12px;
-            padding: 1rem 1.25rem;
-            overflow-x: auto;
-            font-size: 0.95rem;
-            line-height: 1.5;
-            color: #f1f1f1;
-        }
+      pre {
+        background: var(--card);
+        border-radius: 12px;
+        padding: 1rem 1.25rem;
+        overflow-x: auto;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        color: #f1f1f1;
+      }
 
-        input {
-            background: var(--input-bg);
-            color: var(--fg);
-            padding: 0.6rem 1rem;
-            border-radius: 8px;
-            border: 1px solid var(--input-border);
-            width: 100%;
-            max-width: 400px;
-            margin: 1rem auto;
-            display: block;
-            font-size: 1rem;
-        }
+      footer {
+        text-align: center;
+        padding: 2rem 1rem;
+        font-size: 0.875rem;
+        color: #888;
+      }
 
-        button {
-            background: var(--accent);
-            color: #fff;
-            padding: 0.65rem 1.25rem;
-            font-size: 1rem;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background 0.2s ease;
-            display: block;
-            margin: 0.5rem auto;
-        }
+      a {
+        color: var(--accent-light);
+      }
 
-        button:hover {
-            background: #fb923c;
-        }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>ZevFocus</h1>
+      <p>
+        Hack your time, not just your code — a blazing‑fast CLI to track deep‑work sessions, build 🔥 streaks, and share tamper‑proof wins.
+      </p>
+      <div class="btn-group">
+        <a class="btn" href="#downloads">Download</a>
+        <a class="btn" href="#quickstart">Quick‑Start</a>
+        <a class="btn" href="verify/">🔍 Verify Tweet Hash</a>
+      </div>
+    </header>
 
-        #result {
-            margin-top: 1.5rem;
-            text-align: center;
-            font-size: 1.1rem;
-            color: var(--accent-light);
-        }
+    <section id="features">
+      <h2>✨ Features at a Glance</h2>
+      <ul class="features">
+        <li>⚡️ <strong>Instant Sessions</strong><br />Start and stop with <code>zevfocus start/stop</code>.</li>
+        <li>🛡 <strong>Tamper‑Proof</strong><br />HMAC signatures + hash to prove authenticity.</li>
+        <li>🔥 <strong>Daily Streaks</strong><br />Dopamine‑driven streak counter like GitHub.</li>
+        <li>⏱ <strong>Idle Detection</strong><br />Counts only real keyboard/mouse activity.</li>
+        <li>📊 <strong>Beautiful Summaries</strong><br />CLI dashboards with emojis & structure.</li>
+        <li>🐦 <strong>One‑Click Sharing</strong><br />Generate tweet‑ready cards + hash IDs.</li>
+      </ul>
+    </section>
 
-        footer {
-            text-align: center;
-            padding: 2rem 1rem;
-            font-size: 0.875rem;
-            color: #888;
-        }
+    <section id="quickstart">
+      <h2>🚀 Quick‑Start</h2>
+      <pre>
+$ zevfocus login --user "YourName"
+$ zevfocus start --taskname "Write blog post"
+# ...focus...
+$ zevfocus stop
+$ zevfocus summary
+$ zevfocus share   # generates tweet + hash
+      </pre>
+    </section>
 
-        a {
-            color: var(--accent-light);
-        }
+    <section id="downloads">
+      <h2>⬇️ Download</h2>
+      <p>Choose your platform or use the one‑liner installer:</p>
+      <div class="btn-group">
+        <a class="btn" href="#">Windows (.exe)</a>
+        <a class="btn" href="#">macOS (Universal)</a>
+        <a class="btn" href="#">Linux (x86_64)</a>
+      </div>
+      <p>Or run:</p>
+      <pre>curl -sSL https://zevfocus.dev/install.sh | bash</pre>
+    </section>
 
-        a:hover {
-            text-decoration: underline;
-        }
-        </style>
-    </head>
-    <body>
-        <header>
-            <h1>ZevFocus</h1>
-            <p>
-                Hack your time, not just your code — a blazing‑fast CLI to track deep‑work sessions, build 🔥 streaks, and share tamper‑proof wins.
-            </p>
-            <div class="btn-group">
-                <a class="btn" href="#downloads">Download</a>
-                <a class="btn" href="#quickstart">Quick‑Start</a>
-                <a class="btn" href="#verify">🔍 Verify Tweet Hash</a>
-            </div>
-        </header>
+    <section id="docs">
+      <h2>📘 Documentation</h2>
+      <p>Find full docs, advanced usage, and config at <a href="https://docs.zevfocus.dev" target="_blank">docs.zevfocus.dev</a>.</p>
+    </section>
 
-        <section id="features">
-            <h2>✨ Features at a Glance</h2>
-            <ul class="features">
-                <li>⚡️ <strong>Instant Sessions</strong><br />Start and stop with <code>zevfocus start/stop</code>.</li>
-                <li>🛡 <strong>Tamper‑Proof</strong><br />HMAC signatures + hash to prove authenticity.</li>
-                <li>🔥 <strong>Daily Streaks</strong><br />Dopamine‑driven streak counter like GitHub.</li>
-                <li>⏱ <strong>Idle Detection</strong><br />Counts only real keyboard/mouse activity.</li>
-                <li>📊 <strong>Beautiful Summaries</strong><br />CLI dashboards with emojis & structure.</li>
-                <li>🐦 <strong>One‑Click Sharing</strong><br />Generate tweet‑ready cards + hash IDs.</li>
-            </ul>
-        </section>
-
-        <section id="quickstart">
-            <h2>🚀 Quick‑Start</h2>
-            <pre>
-                $ zevfocus login --user "YourName"
-                $ zevfocus start --taskname "Write blog post"
-                # ...focus...
-                $ zevfocus stop
-                $ zevfocus summary
-                $ zevfocus share   # generates tweet + hash
-            </pre>
-        </section>
-
-        <section id="downloads">
-            <h2>⬇️ Download</h2>
-            <p>Choose your platform or use the one‑liner installer:</p>
-            <div class="btn-group">
-                <a class="btn" href="#">Windows (.exe)</a>
-                <a class="btn" href="#">macOS (Universal)</a>
-                <a class="btn" href="#">Linux (x86_64)</a>
-            </div>
-            <p>Or run:</p>
-            <pre>curl -sSL https://zevfocus.dev/install.sh | bash</pre>
-        </section>
-
-        <section id="verify">
-            <h2>🔍 Verify Tweet Hash</h2>
-            <p>Paste the <code>🔒 ID</code> from any ZevFocus tweet to confirm it’s real:</p>
-            <input type="text" id="hashInput" placeholder="Paste tweet hash (e.g. 9f1c2b8e)" />
-            <button onclick="verifyHash()">Verify</button>
-            <div id="result"></div>
-            <script src="script.js"></script>
-        </section>
-
-        <section id="docs">
-            <h2>📘 Documentation</h2>
-            <p>Find full docs, advanced usage, and config at <a href="https://docs.zevfocus.dev" target="_blank">docs.zevfocus.dev</a>.</p>
-        </section>
-
-        <footer>
-            © 2025 ZevFocus • Hack your time, not just your code<br />
-            👨‍💻 Built by <a href="https://github.com/2003Aditya" target="_blank">2003Aditya</a>
-        </footer>
-
-    </body>
+    <footer>
+      © 2025 ZevFocus • Hack your time, not just your code<br />
+      👨‍💻 Built by <a href="https://github.com/2003Aditya" target="_blank">2003Aditya</a>
+    </footer>
+  </body>
 </html>
 
