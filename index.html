@@ -1,13 +1,163 @@
-<!-- index.html -->
 <!DOCTYPE html>
-<html>
-<head>
-  <title>ZevFocus</title>
-</head>
-<body>
-  <h1>Welcome to ZevFocus 🚀</h1>
-  <p>Your productivity CLI companion.</p>
-  <a href="./verify/">🔍 Verify Tweet Hash</a>
-</body>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ZevFocus – Hack your time, not just your code</title>
+        <style>
+        :root {
+            --bg: #0d0d0d;
+            --fg: #f8f8f2;
+            --accent: #ff7b72;
+            --accent-light: #ffb38f;
+            --mono: "JetBrains Mono", Menlo, Consolas, monospace;
+        }
+        body {
+            margin: 0;
+            font-family: var(--mono);
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.6;
+        }
+        header {
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin: 0 0 0.5rem;
+            color: var(--accent);
+        }
+        h2 {
+            color: var(--accent-light);
+            margin-top: 3rem;
+            text-align: center;
+        }
+        p {
+            max-width: 720px;
+            margin: 0.2rem auto 1rem;
+            text-align: center;
+        }
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        .btn {
+            background: var(--accent);
+            color: var(--bg);
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.15s ease-in-out;
+        }
+        .btn:hover {
+            transform: translateY(-4px);
+        }
+        section {
+            padding: 2rem 1rem;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        ul.features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            list-style: none;
+            padding: 0;
+        }
+        ul.features li {
+            background: #1b1b1b;
+            padding: 1.25rem;
+            border-radius: 12px;
+        }
+        code {
+            background: #282a36;
+            padding: 0.2rem 0.4rem;
+            border-radius: 6px;
+            white-space: nowrap;
+        }
+        pre {
+            background: #16181d;
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+            overflow-x: auto;
+            font-size: 0.95rem;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            font-size: 0.875rem;
+            color: #999;
+        }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>ZevFocus</h1>
+            <p>Hack your time, not just your code — a blazing‑fast CLI to track deep‑work sessions, build 🔥 streaks, and share tamper‑proof wins.</p>
+            <div class="btn-group">
+                <a class="btn" href="#downloads">Download</a>
+                <a class="btn" href="#quickstart">Quick‑Start</a>
+                <a class="btn" href="#verify">Verify Tweet</a>
+                <a href="./verify/">🔍 Verify Tweet Hash</a>
+            </div>
+        </header>
+
+        <section id="features">
+            <h2>Features at a Glance</h2>
+            <ul class="features">
+                <li>⚡️ <strong>Instant Sessions</strong><br/>Start and stop with <code>zevfocus start/stop</code>.</li>
+                <li>🛡 <strong>Tamper‑Proof</strong><br/>HMAC signatures + hash to prove authenticity.</li>
+                <li>🔥 <strong>Daily Streaks</strong><br/>Dopamine‑driven streak counter like GitHub, but for focus.</li>
+                <li>⏱ <strong>Idle Detection</strong><br/>Counts real keyboard/mouse activity only.</li>
+                <li>📊 <strong>Beautiful Summaries</strong><br/>CLI dashboards with emojis & colors.</li>
+                <li>🐦 <strong>One‑Click Sharing</strong><br/>Generate tweet‑ready images & hash codes.</li>
+            </ul>
+        </section>
+
+        <section id="quickstart">
+            <h2>Quick‑Start</h2>
+            <pre>$ zevfocus login --user "Aditya"
+                $ zevfocus start --taskname "Write blog post"
+                # ...focus...
+                $ zevfocus stop
+                $ zevfocus summary
+                $ zevfocus share   # generates tweet + image card
+            </pre>
+        </section>
+
+        <section id="downloads">
+            <h2>Download</h2>
+            <p>Choose your platform or use the one‑liner installer.</p>
+            <div class="btn-group">
+                <a class="btn" href="https://github.com/youruser/zevfocus/releases/latest/download/zevfocus.exe">Windows (.exe)</a>
+                <a class="btn" href="https://github.com/youruser/zevfocus/releases/latest/download/zevfocus-mac">macOS (Universal)</a>
+                <a class="btn" href="https://github.com/youruser/zevfocus/releases/latest/download/zevfocus-linux">Linux (x86_64)</a>
+            </div>
+            <p>Or run:</p>
+            <pre>curl -sSL https://zevfocus.dev/install.sh | bash</pre>
+        </section>
+
+        <section id="verify">
+            <h2>Verify a Tweet Hash</h2>
+            <p>Paste the <code>🔒 ID</code> from any ZevFocus tweet to confirm it’s real.</p>
+            <pre>https://zevfocus.dev/verify/&lt;hash&gt;</pre>
+        </section>
+
+        <section id="docs">
+            <h2>Documentation</h2>
+            <p>Find full docs, advanced config, and API at <a href="https://docs.zevfocus.dev">docs.zevfocus.dev</a>.</p>
+        </section>
+
+        <footer>
+            © 2025&nbsp;ZevFocus • Hack your time, not just your code
+        </footer>
+    </body>
 </html>
 
