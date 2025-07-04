@@ -17,13 +17,14 @@ async function verifyHash() {
     return;
   }
 
-  const { user, date, time, session } = data;
+  const { user, date, time, session, streak } = data;
   resultBox.innerHTML = `
     ✅ Hash verified<br/>
     <strong>User:</strong> ${user}<br/>
     <strong>Date:</strong> ${date}<br/>
     <strong>Focus Time:</strong> ${time} minutes<br/>
     <strong>Total Sessions:</strong> ${session}
+    <strong>Streak:</strong> ${streak}
   `;
 }
 
