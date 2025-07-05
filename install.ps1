@@ -39,4 +39,3 @@ if (Test-Path $exePath) {
 } else {
     Write-Error "❌ Installation failed. File not found at expected location: $exePath"
 }
-
