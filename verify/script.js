@@ -22,7 +22,7 @@ async function verifyHash() {
     ✅ Hash verified<br/>
     <strong>User:</strong> ${user}<br/>
     <strong>Date:</strong> ${date}<br/>
-    <strong>Focus Time:</strong> ${time} minutes<br/>
+    <strong>Focus Time:</strong> ${time} sec<br/>
     <strong>Total Sessions:</strong> ${session}
     <strong>Streak:</strong> ${streak}
   `;
