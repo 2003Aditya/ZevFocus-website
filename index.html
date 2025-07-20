@@ -193,30 +193,43 @@
         <section id="quickstart">
             <h2>🚀 Quick‑Start</h2>
             <pre>
-                $ zevfocus login --user "YourName"
-                $ zevfocus start --taskname "Write blog post"
-                # ...focus...
-                $ zevfocus stop
-                $ zevfocus summary
-                $ zevfocus share   # generates tweet + hash
+                $ zevfocus login YourName                     # 🔐 Login to ZevFocus
+                $ zevfocus application                        # 🕵️ Detect current active application
+                $ zevfocus whitelist --application < >        # ✅ Add apps to whitelist
+                $ zevfocus whitelist --list                   # 📋 View whitelist
+                <!--$ zevfocus whitelist --remove "Chrome"        # ❌ Remove app from whitelist-->
+
+                $ zevfocus start --taskname "Write blog post" # ▶️ Start a focused session
+                # ...stay focused...
+                $ zevfocus stop                               # ⏹️ Stop the current session
+
+                $ zevfocus summary                            # 📈 View session summaries
+                $ zevfocus share                              # 📤 Generate a tweet + hash to share
+                $ zevfocus logout                             # 🚪 Logout from ZevFocus
+                $ zevfocus version                            # 🔢 Check ZevFocus version
             </pre>
         </section>
 
+
+
         <section id="downloads">
             <h2>⬇️ Download</h2>
-            <p>Choose your platform or use the one‑liner installer:</p>
-            <div class="btn-group">
-                <a class="btn" href="zevfocus.exe" download>Windows (.exe)</a>
-                <a class="btn" href="ZevFocus" download>Linux (x86_64)</a>
-                <a class="btn" href="#">macOS (Coming Soon)</a>
-            </div>
+            <p> use the one‑liner installer:</p>
+            <!--<div class="btn-group">-->
+            <!--    <a class="btn" href="zevfocus.exe" download>Windows (.exe)</a>-->
+            <!--    <a class="btn" href="ZevFocus" download>Linux (x86_64)</a>-->
+            <!--    <a class="btn" href="#">macOS (Coming Soon)</a>-->
+            <!--</div>-->
 
-            <p>Or run:</p>
+            <p> run:</p>
             <pre># Windows PowerShell
                 irm https://2003aditya.github.io/ZevFocus-website/install.ps1 | iex
             </pre>
             <pre># Linux Install
                 curl -sSL https://2003aditya.github.io/ZevFocus-website/install.sh | bash
+            </pre>
+            <pre># macOS Install
+                Coming soon...
             </pre>
         </section>
 

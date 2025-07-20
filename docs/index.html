@@ -13,37 +13,75 @@
         </header>
 
         <main>
+
             <!-- Installation -->
             <section>
                 <h2>📦 Installation</h2>
                 <p><strong>Windows:</strong></p>
                 <pre><code>irm https://2003aditya.github.io/ZevFocus-website/install.ps1 | iex</code></pre>
-                <p>Or <a href="../zevfocus.exe" download>download the .exe</a> directly.</p>
+                <!--<p>Or <a href="../zevfocus.exe" download>download the .exe</a> directly.</p>-->
 
                 <p><strong>Linux (x86_64):</strong></p>
                 <pre><code>curl -sSL https://2003aditya.github.io/ZevFocus-website/install.sh | bash</code></pre>
-                <p>This downloads and installs <code>ZevFocus</code> as <code>zevfocus</code> in your system.</p>
+                <p>This installs <code>zevfocus</code> globally in your system.</p>
+            </section>
+
+            <!-- Quick Start -->
+            <section id="quickstart">
+                <h2>🚀 Quick‑Start</h2>
+                <pre>
+                    $ zevfocus login YourName                     # 🔐 Login to ZevFocus
+                    $ zevfocus application                        # 🕵️ Detect current active application
+                    $ zevfocus whitelist --application < >        # ✅ Add apps to whitelist
+                    $ zevfocus whitelist --list                   # 📋 View whitelist
+                    <!--$ zevfocus whitelist --remove "Chrome"        # ❌ Remove app from whitelist-->
+
+                    $ zevfocus start --taskname "Write blog post" # ▶️ Start a focused session
+                    # ...stay focused...
+                    $ zevfocus stop                               # ⏹️ Stop the current session
+
+                    $ zevfocus summary                            # 📈 View session summaries
+                    $ zevfocus share                              # 📤 Generate a tweet + hash to share
+                    $ zevfocus logout                             # 🚪 Logout from ZevFocus
+                    $ zevfocus version                            # 🔢 Check ZevFocus version
+                </pre>
             </section>
 
             <!-- Login -->
             <section>
                 <h2>🔐 Login</h2>
-                <p>Register your username (stored locally):</p>
-                <pre><code>zevfocus login yourname</code></pre>
+                <p>Register your username (stored locally and HMAC verified):</p>
+                <pre><code>zevfocus login YourName</code></pre>
+            </section>
+
+            <!-- Application Detection -->
+            <section>
+                <h2>🕵️ Application Tracking</h2>
+                <p>Test detection of currently focused application:</p>
+                <pre><code>zevfocus application</code></pre>
+            </section>
+
+            <!-- Whitelist -->
+            <section>
+                <h2>📋 Manage Whitelist</h2>
+                <p>Only whitelisted apps/tabs are tracked:</p>
+                <pre><code>zevfocus whitelist --application "code,sublime"</code></pre>
+                <!--<pre><code>zevfocus whitelist --chromeTabs "github.com,notion.so"</code></pre>-->
+                <pre><code>zevfocus whitelist --list</code></pre>
             </section>
 
             <!-- Start Session -->
             <section>
-                <h2>🚀 Start a Focus Session</h2>
-                <pre><code>zevfocus start --taskname "Write blog post"</code></pre>
-                <p>This runs in the background and tracks time actively spent on the system.</p>
+                <h2>🎯 Start a Focus Session</h2>
+                <pre><code>zevfocus start --taskname "Design new UI"</code></pre>
+                <p>Runs in background and tracks time spent productively.</p>
             </section>
 
             <!-- Stop Session -->
             <section>
                 <h2>🛑 Stop Session</h2>
                 <pre><code>zevfocus stop</code></pre>
-                <p>Stops the session and prints a summary:</p>
+                <p>Ends your session and prints summary:</p>
                 <pre><code>🎯 Session Ended.
                     🕒 Focus Duration: 110 minutes
                     🔥 Streak: 3 days</code></pre>
@@ -52,7 +90,7 @@
             <!-- Summary -->
             <section>
                 <h2>📊 Summary</h2>
-                <p>Shows total time, sessions, top task, and streaks:</p>
+                <p>View your overall productivity data:</p>
                 <pre><code>zevfocus summary</code></pre>
                 <pre><code>🧠 Total Focus Time: 5h 45m
                     📆 Sessions: 4
@@ -63,9 +101,9 @@
             <!-- Share -->
             <section>
                 <h2>🐦 Share to Twitter</h2>
-                <p>Generate tweet-ready output + tamper-proof hash:</p>
+                <p>Generate a tweet + tamper-proof hash:</p>
                 <pre><code>zevfocus share</code></pre>
-                <p>Output example:</p>
+                <p>Example output:</p>
                 <pre><code>🐦 ZevFocus Summary
                     User: YourName
                     🕒 110m deep work
@@ -78,7 +116,7 @@
             <section>
                 <h2>🔍 Verify a Hash</h2>
                 <p>Visit the verifier at <a href="../verify/" target="_blank">/verify</a></p>
-                <p>Paste the hash from the tweet to confirm authenticity.</p>
+                <p>Paste the hash from the tweet to confirm authenticity:</p>
                 <pre><code>✅ Hash verified
                     User: YourName
                     Date: 2025-07-06
@@ -86,14 +124,29 @@
                     Streak: 3 days</code></pre>
             </section>
 
+
+            <!-- Version -->
+            <section>
+                <h2>🔢 Version</h2>
+                <p>Check installed ZevFocus version:</p>
+                <pre><code>zevfocus version</code></pre>
+            </section>
+
+            <!-- Logout -->
+            <section>
+                <h2>🚪 Logout</h2>
+                <p>Clear current session login:</p>
+                <pre><code>zevfocus logout</code></pre>
+            </section>
+
             <!-- Advanced Options -->
             <section>
                 <h2>⚙️ Advanced Options</h2>
-                <ul>
-                    <li><code>--debug</code>: Show internal logs</li>
-                    <li><code>--no-share</code>: Prevent hash generation</li>
-                </ul>
-                <p>More config options coming soon.</p>
+                <!--<ul>-->
+                <!--    <li><code>--debug</code>: Show internal logs</li>-->
+                <!--    <li><code>--no-share</code>: Prevent hash generation</li>-->
+                <!--</ul>-->
+                <p>config options coming soon.</p>
             </section>
 
             <!-- Internals -->
@@ -101,9 +154,9 @@
                 <h2>🧠 How It Works</h2>
                 <ul>
                     <li>Local data stored at <code>~/.zevfocus/</code></li>
-                    <li>Session hashes use HMAC for tamper-proof proof</li>
+                    <li>Session hashes use HMAC for tamper-proof records</li>
                     <li>Idle detection filters out non-productive time</li>
-                    <li>Nothing is ever sent to a server unless shared</li>
+                    <li>Nothing is sent to a server unless you choose to share</li>
                 </ul>
             </section>
 
@@ -111,9 +164,9 @@
             <section>
                 <h2>🛠 Troubleshooting</h2>
                 <ul>
-                    <li><strong>Command not found?</strong> Make sure it's in your PATH</li>
-                    <li><strong>Idle not detected?</strong> You may not have interacted with keyboard/mouse</li>
-                    <li><strong>Want to reset?</strong> Delete <code>~/.zevfocus/db.json</code></li>
+                    <li><strong>Command not found?</strong> Make sure it's in your <code>$PATH</code></li>
+                    <li><strong>Idle not detected?</strong> You may not have used mouse/keyboard recently</li>
+                    <li><strong>Want to reset?</strong> Delete <code>~/.ZevFocus</code></li>
                 </ul>
             </section>
 
@@ -122,19 +175,25 @@
                 <h2>❓ FAQ</h2>
                 <ul>
                     <li><strong>Is it offline?</strong> Yes, fully local by default</li>
-                    <li><strong>Is my data stored remotely?</strong> No, only local unless you share</li>
-                    <li><strong>Can I use it in scripts?</strong> Absolutely — automate using shell or cron</li>
+                    <li><strong>Is my data stored remotely?</strong> No, unless you share manually</li>
+                    <li><strong>Can I script it?</strong> Absolutely — works in shell, cron, or CI</li>
                 </ul>
             </section>
+            <!-- Feedback -->
+            <section>
+                <h2>📣 Feedback & Bug Report</h2>
+                <p>Have suggestions, feature requests, or found a bug?</p>
+                <p>📝 Please <a href="https://docs.google.com/forms/d/e/1FAIpQLSdcfLUn33CiwP0bG2_qvC52H3BVsJAVZN57FYom4Q9pc7y8gQ/viewform" target="_blank">fill out this quick form</a> to help us improve ZevFocus.</p>
+                <p>We read every response. Thank you!</p>
+            </section>
+
         </main>
 
         <footer>
             <p>© 2025 ZevFocus • <a href="../">← Back to Home</a></p>
             <div class="footer-meta">
                 <p>👨‍💻 Built by <a href="https://github.com/2003Aditya" target="_blank">2003Aditya</a></p>
-                <p>
-                    📬 Found a bug or concern? <a href="mailto:zevfocus@gmail.com">zevfocus@gmail.com</a>
-                </p>
+                <p>📬 Found a bug or concern? <a href="mailto:zevfocus@gmail.com">zevfocus@gmail.com</a></p>
             </div>
         </footer>
     </body>
